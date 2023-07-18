@@ -10,10 +10,10 @@ param location string = resourceGroup().location
 var resourceName = !empty(name) ? replace(name, ' ', '-') : 'a${uniqueString(resourceGroup().id)}'
 
 @description('Tags to apply to environment resources')
-param tags object = {}
+param tags object = resourceGroup().tags
 
-var hostingPlanName = '${resourceName}-hp'
-var webAppName = '${resourceName}-web'
+var hostingPlanName = 'asp-sbx-${resourceName}-web'
+var webAppName = 'app-sbx-${resourceName}-web'
 
 resource hostingPlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: hostingPlanName
