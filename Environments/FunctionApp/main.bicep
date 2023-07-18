@@ -22,7 +22,7 @@ param supportsHttpsTrafficOnly bool = true
 param runtime string = 'dotnet-isolated'
 
 @description('Tags to apply to environment resources')
-param tags object = {}
+param tags object = resourceGroup.tags
 
 var linexFxVersions = {
   dotnet: 'DOTNET|6.0'
