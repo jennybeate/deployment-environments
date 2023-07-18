@@ -33,7 +33,7 @@ var linexFxVersions = {
   python: 'PYTHON|3.10'
 }
 
-var resourceName = !empty(name) ? replace(name, ' ', '-') : 'a${uniqueString(resourceGroup().id)}'
+var resourceName = !empty(name) ? replace(name, ' ', '-') : 'func-sbx-test-net'
 
 // storage account names can be no longer than 24 chars
 var storageAcctName = take(toLower(replace(replace(resourceName, '-', ''), '_', '')), 24)
